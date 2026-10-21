@@ -10,7 +10,8 @@ public class DBConnection {
     private static final String USER = "root";
 
     
-    private static final String PASSWORD = "canteen@26project";
+    private static final String PASSWORD =
+        System.getenv("CANTEEN_DB_PASSWORD");
 
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASSWORD);
